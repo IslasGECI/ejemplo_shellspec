@@ -1,0 +1,13 @@
+name: Conservación de Islas
+on: [push, pull_request]
+
+jobs:
+  actions:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Copia repositorio
+      uses: actions/checkout@v2
+    - name: Construye imagen
+      run: docker build --tag islasgeci .
+    - name: Corre pruebas
+      run: docker run islasgeci make tests
