@@ -1,9 +1,16 @@
-name: Conservación de Islas
-on: [push, pull_request]
-
+name: 🏝️ Tests
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+  push:
+    branches:
+      - develop
+      - master
 jobs:
   actions:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Copia repositorio
       uses: actions/checkout@v2
