@@ -1,1 +1,1 @@
-ejemplo_shellspec
+# Ejemplo de uso de ShellSpec
