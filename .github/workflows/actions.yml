@@ -1,0 +1,20 @@
+name: 🏝️ Tests
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+  push:
+    branches:
+      - develop
+      - master
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copia repositorio
+      uses: actions/checkout@v2
+    - name: Construye imagen
+      run: docker build --tag islasgeci .
+    - name: Corre pruebas
+      run: docker run islasgeci make tests
